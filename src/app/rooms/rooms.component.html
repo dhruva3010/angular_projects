@@ -1,0 +1,14 @@
+<h3>This is {{ myName }}'s room</h3>
+<div [hidden]="show">Number of Rooms: {{ numberOfRooms }}</div>
+
+<button (click)="toggle()">Toggle</button>
+
+{{ roomsInfo.availableRooms > 0 ? "present" : "No rooms" }}
+
+<div *ngIf="roomsInfo.availableRooms > 0">
+  <app-rooms-list [roomsList]="roomsList" (selectedRoom)="processRoom($event)"></app-rooms-list>
+</div>
+
+<div>
+    <button (click)="addRoom()">Add Room</button>
+</div>  
